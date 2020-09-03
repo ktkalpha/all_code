@@ -1,5 +1,4 @@
 from tkinter import filedialog
-print("aa")
 n=[]
 file =  filedialog.askopenfilenames(initialdir ="C:/",title = "choose your file")
 file=str(file).replace('(','')
