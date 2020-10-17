@@ -11,7 +11,7 @@ def update():
     kst = time.localtime()
     timer.configure(text=ko_num[kst.tm_hour-13] + "시\n" + ko_num2[kst.tm_min-1] + "분\n" + ko_num2[kst.tm_sec-1] + "초")
     root.after(100, update)
-timer = Label(text = "jjjjjjjjjjjjjjj", font = ("맑은 고딕", 50))
+timer = Label(text = "", font = ("맑은 고딕", 50))
 timer.pack()
 update()
 root.mainloop()
