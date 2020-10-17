@@ -9,7 +9,11 @@ ko_num2 = ["일", "이", "삼", "사", "오", "육", "칠", "팔", "구", "십",
 root = Tk()
 def update():
     kst = time.localtime()
-    timer.configure(text=ko_num[kst.tm_hour-13] + "시\n" + ko_num2[kst.tm_min-1] + "분\n" + ko_num2[kst.tm_sec-1] + "초")
+    if kst.tm_hour > 12:
+        timer.configure(text="오후\n"+ko_num[kst.tm_hour-13] + "시\n" + ko_num2[kst.tm_min-1] + "분\n" + ko_num2[kst.tm_sec-1] + "초")
+    else:
+        timer.configure(text="오전\n"+ko_num[kst.tm_hour-1] + "시\n" + ko_num2[kst.tm_min-1] + "분\n" + ko_num2[kst.tm_sec-1] + "초")
+
     root.after(100, update)
 def exits():
     root.destroy()
